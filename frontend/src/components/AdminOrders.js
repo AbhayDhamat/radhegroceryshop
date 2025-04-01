@@ -31,7 +31,7 @@ const AdminOrders = () => {
 
   const fetchAllOrders = async (token) => {
     try {
-      const response = await fetch("http://localhost:5000/admin/orders", {
+      const response = await fetch("https://radhegroceryshop.onrender.com/admin/orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -53,7 +53,7 @@ const AdminOrders = () => {
   //   const token = localStorage.getItem("token");
   //   try {
   //     const response = await fetch(
-  //       `http://localhost:5000/admin/orders/${orderId}/status`,
+  //       `https://radhegroceryshop.onrender.com/admin/orders/${orderId}/status`,
   //       {
   //         method: "PUT",
   //         headers: {

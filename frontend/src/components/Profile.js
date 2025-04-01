@@ -20,7 +20,7 @@ const Profile = () => {
 
   const fetchUserProfile = async (token) => {
     try {
-      const response = await fetch("http://localhost:5000/user/profile", {
+      const response = await fetch("https://radhegroceryshop.onrender.com/user/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -48,7 +48,7 @@ const Profile = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("http://localhost:5000/user/profile", {
+      const response = await fetch("https://radhegroceryshop.onrender.com/user/profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

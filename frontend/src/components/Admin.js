@@ -14,9 +14,9 @@ const AddProduct = () => {
 
   // ✅ API endpoint mapping for different product categories
   const apiEndpoints = {
-    fruits: "http://localhost:5000/api/fruits",
-    vegetables: "http://localhost:5000/api/vegetables",
-    dairy: "http://localhost:5000/api/milk-products",
+    fruits: "https://radhegroceryshop.onrender.com/api/fruits",
+    vegetables: "https://radhegroceryshop.onrender.com/api/vegetables",
+    dairy: "https://radhegroceryshop.onrender.com/api/milk-products",
   };
 
   // ✅ Fetch products based on selected category

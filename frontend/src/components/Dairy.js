@@ -25,7 +25,7 @@ const Dairy = () => {
 
     const fetchMilkProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/milk-products", {
+        const response = await fetch("https://radhegroceryshop.onrender.com/api/milk-products", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -145,7 +145,7 @@ const Dairy = () => {
 
       console.log("🟢 Sending Dairy Order Request:", orderData);
 
-      const response = await fetch("http://localhost:5000/orders/dairy", {
+      const response = await fetch("https://radhegroceryshop.onrender.com/orders/dairy", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

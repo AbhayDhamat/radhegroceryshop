@@ -41,7 +41,7 @@
 
 //   const fetchUserProfile = async (token) => {
 //     try {
-//       const response = await fetch("http://localhost:5000/user/profile", {
+//       const response = await fetch("https://radhegroceryshop.onrender.com/user/profile", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -58,7 +58,7 @@
 
 //   const fetchOrders = async (token) => {
 //     try {
-//       const response = await fetch("http://localhost:5000/orders", {
+//       const response = await fetch("https://radhegroceryshop.onrender.com/orders", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -342,7 +342,7 @@
 
 //   const fetchUserProfile = async (token) => {
 //     try {
-//       const response = await fetch("http://localhost:5000/user/profile", {
+//       const response = await fetch("https://radhegroceryshop.onrender.com/user/profile", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -359,7 +359,7 @@
 
 //   const fetchOrders = async (token) => {
 //     try {
-//       const response = await fetch("http://localhost:5000/orders", {
+//       const response = await fetch("https://radhegroceryshop.onrender.com/orders", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -625,7 +625,7 @@ const Order = () => {
 
   const fetchUserProfile = async (token) => {
     try {
-      const response = await fetch("http://localhost:5000/user/profile", {
+      const response = await fetch("https://radhegroceryshop.onrender.com/user/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -642,7 +642,7 @@ const Order = () => {
 
   const fetchOrders = async (token) => {
     try {
-      const response = await fetch("http://localhost:5000/orders", {
+      const response = await fetch("https://radhegroceryshop.onrender.com/orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -671,7 +671,7 @@ const Order = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:5000/orders/${orderId}`, {
+      const response = await fetch(`https://radhegroceryshop.onrender.com/orders/${orderId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
