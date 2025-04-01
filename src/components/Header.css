@@ -1,0 +1,207 @@
+/* 🔹 General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f8fc;
+  color: #333;
+}
+
+/* 🔹 Header Styling */
+.header {
+  background: #121212;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4CAF50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 🔹 Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: right;
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.active-link {
+  color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.logout-btn {
+  background: #1a1a1a;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+/* 🔹 Mobile Menu */
+.menu-toggle {
+  display: none;
+  color: #4CAF50;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 968px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #121212;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+}
+
+/* 🔹 Footer (Same Design as Header) */
+.footer {
+  background: #292929;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 15px;
+  min-width: 250px;
+  text-align: left;
+}
+
+.footer-section h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+.footer-section p,
+.footer-section a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #f2f2f2;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+  color: white;
+  opacity: 0.8;
+}
+
+/* 🔹 Social Media Icons */
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

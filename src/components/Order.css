@@ -1,0 +1,197 @@
+/* General Page Styling */
+.order-page, .bill-page, .address-form {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #121212;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+/* Header Styles */
+.order-page h1, .bill-page h1, .address-form h2 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Bill Table Styling */
+.bill-container {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bill-container th, .bill-container td {
+  border: 1px solid #4CAF50;
+  padding: 14px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.bill-container th {
+  background-color: #2e7d32;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.bill-container tr:nth-child(even) {
+  background-color: rgba(76, 175, 80, 0.15);
+}
+
+/* Bill Details Section */
+.bill-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(76, 175, 80, 0.3);
+}
+
+.bill-details td {
+  padding: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  border-bottom: 1px solid #4CAF50;
+}
+
+.bill-details td:first-child {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+/* Bill Summary Section */
+.bill-summary {
+  margin-top: 20px;
+  padding: 15px;
+  background: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(76, 175, 80, 0.3);
+}
+
+.bill-summary p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.bill-summary .total-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Buttons */
+.download-btn, .back-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 15px 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.download-btn:hover, .back-btn:hover {
+  background-color: #2e7d32;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .order-card1 {
+    background: #121212;
+    border-radius: 8px;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+}
+   .bill-page, .address-form {
+    padding: 20px;
+    color:#1c1c1c;
+  }
+
+  .generate-bill-btn, .download-btn, .back-btn, .save-address-btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .address-input {
+    width: 100%;
+  }
+
+  .bill-container th, .bill-container td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  /* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* To overlay on top of other content */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  color: #4CAF50; /* Green color for confirmation */
+}
+
+.modal-content p {
+  color: #333;
+  font-size: 30px;
+}
+
+.close-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive modal styling */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+}
