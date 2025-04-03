@@ -799,7 +799,7 @@ const Order = () => {
         </div>
         <br />
 
-        <table className="bill-container">
+        {/* <table className="bill-container">
           <thead>
             <tr>
               <th>Order ID</th>
@@ -823,6 +823,31 @@ const Order = () => {
             ))}
           </tbody>
         </table>
+         */}
+<table className="bill-container">
+  <thead>
+    <tr>
+      {/* Remove the Order ID header */}
+      <th>PRODUCT NAME</th>
+      <th>TYPE</th>
+      <th>PRICE</th>
+      <th>QUANTITY</th>
+      <th>TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    {selectedOrder.items.map((item, index) => (
+      <tr key={`${selectedOrder._id}-${index}`}>
+        {/* Remove the Order ID data */}
+        <td>{item.productId?.name || "Unknown Product"}</td>
+        <td>{item.productType}</td>
+        <td>₹{item.price || "N/A"}</td>
+        <td>{item.quantity}</td>
+        <td>₹{item.quantity * item.price}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
         <div className="bill-footer">
           <h3>Total Amount: ₹{totalAmount}</h3>
