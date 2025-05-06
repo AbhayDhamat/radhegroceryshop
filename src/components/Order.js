@@ -773,218 +773,97 @@ const Order = () => {
   if (loading) return <p>Loading orders...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  // if (showBill && selectedOrder) {
-  //   const totalAmount = selectedOrder.totalAmount;
+  if (showBill && selectedOrder) {
+    const totalAmount = selectedOrder.totalAmount;
 
-  //   return (
-  //     <div className="bill-page">
-  //       <h1>Radhe Grocery Shop Order Bill</h1>
-  //       <div className="bill-header">
-  //         <p>
-  //           <strong>Bill Date:</strong>{" "}
-  //           {new Date(selectedOrder.createdAt).toLocaleDateString()}
-  //         </p>
-  //       </div>
-  //       <div className="bill-user-info">
-  //         <p>
-  //           <strong>Name:</strong> {userInfo.name || "Unknown"}
-  //         </p>
-  //         <p>
-  //           <strong>Email:</strong> {userInfo.email || "Unknown"}
-  //         </p>
-  //         <p>
-  //           <strong>Address:</strong> {address?.street}, {address?.city},{" "}
-  //           {address?.state}, {address?.zip}, {address?.country}
-  //         </p>
-  //       </div>
-  //       <br />
+    return (
+      <div className="bill-page">
+        <h1>Radhe Grocery Shop Order Bill</h1>
+        <div className="bill-header">
+          <p>
+            <strong>Bill Date:</strong>{" "}
+            {new Date(selectedOrder.createdAt).toLocaleDateString()}
+          </p>
+        </div>
+        <div className="bill-user-info">
+          <p>
+            <strong>Name:</strong> {userInfo.name || "Unknown"}
+          </p>
+          <p>
+            <strong>Email:</strong> {userInfo.email || "Unknown"}
+          </p>
+          <p>
+            <strong>Address:</strong> {address?.street}, {address?.city},{" "}
+            {address?.state}, {address?.zip}, {address?.country}
+          </p>
+        </div>
+        <br />
 
-  //       <table className="bill-container">
-  //         <thead>
-  //           <tr>
-  //             <th>Order ID</th>
-  //             <th>Product Name</th>
-  //             <th>Type</th>
-  //             <th>Price</th>
-  //             <th>Quantity</th>
-  //             <th>Total</th>
-  //           </tr>
-  //         </thead>
-  //         <tbody>
-  //           {selectedOrder.items.map((item, index) => (
-  //             <tr key={`${selectedOrder._id}-${index}`}>
-  //               <td>{selectedOrder._id}</td>
-  //               <td>{item.productId?.name || "Unknown Product"}</td>
-  //               <td>{item.productType}</td>
-  //               <td>₹{item.price || "N/A"}</td>
-  //               <td>{item.quantity}</td>
-  //               <td>₹{item.quantity * item.price}</td>
-  //             </tr>
-  //           ))}
-  //         </tbody>
-  //       </table>
+        <table className="bill-container">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Product Name</th>
+              <th>Type</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {selectedOrder.items.map((item, index) => (
+              <tr key={`${selectedOrder._id}-${index}`}>
+                <td>{selectedOrder._id}</td>
+                <td>{item.productId?.name || "Unknown Product"}</td>
+                <td>{item.productType}</td>
+                <td>₹{item.price || "N/A"}</td>
+                <td>{item.quantity}</td>
+                <td>₹{item.quantity * item.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         
 
 
-  //       <div className="bill-footer">
-  //         <h3>Total Amount: ₹{totalAmount}</h3>
-  //       </div>
-
-  //       <button onClick={handleDownloadBill} className="download-btn">
-  //         Download Bill
-  //       </button>
-  //       <button onClick={() => setShowBill(false)} className="download-btn">
-  //         Back to Orders
-  //       </button>
-
-  //       {/* Add the Pay Now Button */}
-  //       <button onClick={handlePayNow} className="download-btn">
-  //         Pay Now
-  //       </button>
-
-  //       {/* Cash On Delivery Button */}
-  //       <button onClick={handleCashOnDelivery} className="download-btn">
-  //         Cash On Delivery
-  //       </button>
-
-  //       {/* Modal Popup for Order Confirmation */}
-  //       {showModal && (
-  //         <div className="modal">
-  //           <div className="modal-content">
-  //             <p>Order Confirmed Successfully!</p>
-  //             <p>Your order will be delivered shortly. Thank you for shopping with us!</p>
-  //             <button onClick={closeModal} className="download-btn">
-  //               Close
-  //             </button>
-  //           </div>
-  //         </div>
-  //       )}
-  //     </div>
-  //   );
-  // }
-
-  if (showBill && selectedOrder) {
-    const totalAmount = selectedOrder.totalAmount;
-  
-    return (
-      <div className="bill-page">
-        <style>{`
-          .bill-page {
-            padding: 20px;
-            color: white;
-          }
-          .bill-container-wrapper {
-            overflow-x: auto;
-            margin-top: 20px;
-          }
-          .bill-container {
-            width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
-            background-color: white;
-            color: black;
-            border-radius: 8px;
-            overflow: hidden;
-          }
-          .bill-container th, .bill-container td {
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            text-align: center;
-          }
-          .bill-container th {
-            background-color: #2c3e50;
-            color: white;
-          }
-          .bill-footer {
-            margin-top: 20px;
-          }
-          .download-btn {
-            margin: 10px 5px;
-            padding: 10px 16px;
-            background-color: green;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-          }
-          @media (max-width: 600px) {
-            .bill-container-wrapper {
-              overflow-x: scroll;
-            }
-            .download-btn {
-              width: 100%;
-              display: block;
-            }
-          }
-        `}</style>
-  
-        <h1>Radhe Grocery Shop Order Bill</h1>
-        <div className="bill-header">
-          <p><strong>Bill Date:</strong> {new Date(selectedOrder.createdAt).toLocaleDateString()}</p>
-        </div>
-        <div className="bill-user-info">
-          <p><strong>Name:</strong> {userInfo.name || "Unknown"}</p>
-          <p><strong>Email:</strong> {userInfo.email || "Unknown"}</p>
-          <p><strong>Address:</strong> {address?.street}, {address?.city}, {address?.state}, {address?.zip}, {address?.country}</p>
-        </div>
-        <br />
-  
-        <div className="bill-container-wrapper">
-          <table className="bill-container">
-            <thead>
-              <tr>
-                <th>Order ID</th>
-                <th>Product Name</th>
-                <th>Type</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {selectedOrder.items.map((item, index) => (
-                <tr key={`${selectedOrder._id}-${index}`}>
-                  <td>{selectedOrder._id}</td>
-                  <td>{item.productId?.name || "Unknown Product"}</td>
-                  <td>{item.productType}</td>
-                  <td>₹{item.price || "N/A"}</td>
-                  <td>{item.quantity}</td>
-                  <td>₹{item.quantity * item.price}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-  
         <div className="bill-footer">
           <h3>Total Amount: ₹{totalAmount}</h3>
         </div>
-  
+
         <button onClick={handleDownloadBill} className="download-btn">
           Download Bill
         </button>
         <button onClick={() => setShowBill(false)} className="download-btn">
           Back to Orders
         </button>
+
+        {/* Add the Pay Now Button */}
         <button onClick={handlePayNow} className="download-btn">
           Pay Now
         </button>
+
+        {/* Cash On Delivery Button */}
         <button onClick={handleCashOnDelivery} className="download-btn">
           Cash On Delivery
         </button>
-  
+
+        {/* Modal Popup for Order Confirmation */}
         {showModal && (
           <div className="modal">
             <div className="modal-content">
               <p>Order Confirmed Successfully!</p>
               <p>Your order will be delivered shortly. Thank you for shopping with us!</p>
-              <button onClick={closeModal} className="download-btn">Close</button>
+              <button onClick={closeModal} className="download-btn">
+                Close
+              </button>
             </div>
           </div>
         )}
       </div>
     );
   }
+
+
   
 
   if (orders.length === 0) return <p>No orders found.</p>;
