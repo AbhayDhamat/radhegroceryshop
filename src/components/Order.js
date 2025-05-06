@@ -889,8 +889,8 @@ const Order = () => {
   width: 100%;
   min-width: 600px;
   border-collapse: collapse;
-  background-color: #2a2a2a;
-  color: white;
+
+  color: black;
   border-radius: 8px;
   overflow: hidden;
 }
