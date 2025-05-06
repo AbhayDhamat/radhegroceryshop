@@ -870,52 +870,101 @@ const Order = () => {
       <div className="bill-page">
         <style>{`
           .bill-page {
-            padding: 20px;
-            color: white;
-          }
-          .bill-container-wrapper {
-            overflow-x: auto;
-            margin-top: 20px;
-          }
-          .bill-container {
-            width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
-            background-color: black;
-            color: white;
-            border-radius: 8px;
-            overflow: hidden;
-          }
-          .bill-container th, .bill-container td {
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            text-align: center;
-          }
-          .bill-container th {
-            background-color: #2c3e50;
-            color: white;
-          }
-          .bill-footer {
-            margin-top: 20px;
-          }
-          .download-btn {
-            margin: 10px 5px;
-            padding: 10px 16px;
-            background-color: green;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-          }
-          @media (max-width: 600px) {
-            .bill-container-wrapper {
-              overflow-x: scroll;
-            }
-            .download-btn {
-              width: 100%;
-              display: block;
-            }
-          }
+  padding: 20px;
+  color: white;
+  background-color: #121212; /* Dark background */
+  min-height: 100vh;
+}
+
+.bill-container-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  background-color: #1f1f1f; /* Darker background for table wrapper */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.bill-container {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bill-container th,
+.bill-container td {
+  padding: 12px 16px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.bill-container th {
+  background-color: #333;
+  color: #00ff88;
+}
+
+.bill-header,
+.bill-user-info {
+  margin-bottom: 20px;
+}
+
+.bill-footer {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.download-btn {
+  margin: 10px 5px;
+  padding: 10px 16px;
+  background-color: #00c853;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #00b248;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #222;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .bill-container-wrapper {
+    overflow-x: scroll;
+  }
+
+  .download-btn {
+    width: 100%;
+    display: block;
+  }
+}
+
         `}</style>
   
         <h1>Radhe Grocery Shop Order Bill</h1>
