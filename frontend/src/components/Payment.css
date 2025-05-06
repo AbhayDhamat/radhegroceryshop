@@ -1,0 +1,177 @@
+/* Main container styling */
+.payment-page {
+  max-width: 500px;
+  max-height: fit-content;
+  margin: auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-bottom: 600px;
+}
+
+.payment{
+  margin-top: 300px;
+}
+
+
+/* Title styling */
+.payment-page h2 {
+  color: #333;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* Card input container */
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* Styling for the card element */
+.card-element {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.card-element:focus {
+  border-color: #4CAF50;
+  background-color: #fff;
+}
+
+/* Error message styling */
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 500;
+  display: block;
+}
+
+/* Pay Now button styling */
+.pay-now-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pay-now-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.pay-now-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Button when processing payment */
+.processing-btn {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: not-allowed;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.processing-btn:hover {
+  background-color: #f57c00;
+  transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal h3 {
+  font-size: 24px;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.modal p {
+  font-size: 16px;
+  margin: 20px 0;
+  color: #333;
+}
+
+.close-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .payment-page {
+    padding: 25px;
+  }
+
+  .payment-page h2 {
+    font-size: 28px;
+  }
+
+  .pay-now-btn,
+  .processing-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+  
