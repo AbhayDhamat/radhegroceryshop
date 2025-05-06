@@ -889,7 +889,7 @@ const Order = () => {
   width: 100%;
   min-width: 600px;
   border-collapse: collapse;
-
+background-color: black;
   color: black;
   border-radius: 8px;
   overflow: hidden;
