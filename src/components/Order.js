@@ -889,11 +889,12 @@ const Order = () => {
   width: 100%;
   min-width: 600px;
   border-collapse: collapse;
-background-color: black;
-  color: black;
+  background-color: black;
+  color: white; /* ← This fixes the invisible text issue */
   border-radius: 8px;
   overflow: hidden;
 }
+
 
 .bill-container th,
 .bill-container td {
