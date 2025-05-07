@@ -901,6 +901,7 @@ const Order = () => {
   padding: 12px 16px;
   border: 1px solid #444;
   text-align: center;
+  color:black;
 }
 
 .bill-container th {
