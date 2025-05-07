@@ -991,7 +991,7 @@ const Order = () => {
                 <th>Total</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bill-container">
               {selectedOrder.items.map((item, index) => (
                 <tr key={`${selectedOrder._id}-${index}`}>
                   <td>{selectedOrder._id}</td>
