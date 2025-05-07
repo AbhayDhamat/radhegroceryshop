@@ -993,7 +993,7 @@ const Order = () => {
                 <th>Total</th>
               </tr>
             </thead>
-            <tbody>
+            {/* <tbody>
               {selectedOrder.items.map((item, index) => (
                 <tr key={`${selectedOrder._id}-${index}`}>
                   <td>{selectedOrder._id}</td>
@@ -1004,7 +1004,20 @@ const Order = () => {
                   <td>₹{item.quantity * item.price}</td>
                 </tr>
               ))}
-            </tbody>
+            </tbody> */}
+            <tbody style={{ backgroundColor: "#000", color: "#fff" }}>
+  {selectedOrder.items.map((item, index) => (
+    <tr key={`${selectedOrder._id}-${index}`} style={{ border: "1px solid #444" }}>
+      <td>{selectedOrder._id}</td>
+      <td>{item.productId?.name || "Unknown Product"}</td>
+      <td>{item.productType}</td>
+      <td>₹{item.price || "N/A"}</td>
+      <td>{item.quantity}</td>
+      <td>₹{item.quantity * item.price}</td>
+    </tr>
+  ))}
+</tbody>
+
           </table>
         </div>
   
