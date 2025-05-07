@@ -901,6 +901,7 @@ const Order = () => {
   padding: 12px 16px;
   border: 1px solid #444;
   text-align: center;
+  color:black;
 }
 
 .bill-container th {
@@ -994,8 +995,8 @@ const Order = () => {
             <tbody>
               {selectedOrder.items.map((item, index) => (
                 <tr key={`${selectedOrder._id}-${index}`}>
-                  <td>{selectedOrder._id}</td>
-                  <td>{item.productId?.name || "Unknown Product"}</td>
+                  <th>{selectedOrder._id}</th>
+                  <th>{item.productId?.name || "Unknown Product"}</th>
                   <td>{item.productType}</td>
                   <td>₹{item.price || "N/A"}</td>
                   <td>{item.quantity}</td>
