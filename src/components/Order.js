@@ -997,10 +997,10 @@ const Order = () => {
                 <tr key={`${selectedOrder._id}-${index}`}>
                   <th>{selectedOrder._id}</th>
                   <th>{item.productId?.name || "Unknown Product"}</th>
-                  <td>{item.productType}</td>
-                  <td>₹{item.price || "N/A"}</td>
-                  <td>{item.quantity}</td>
-                  <td>₹{item.quantity * item.price}</td>
+                  <th>{item.productType}</th>
+                  <th>₹{item.price || "N/A"}</th>
+                  <th>{item.quantity}</th>
+                  <th>₹{item.quantity * item.price}</th>
                 </tr>
               ))}
             </tbody>
