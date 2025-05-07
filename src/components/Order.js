@@ -995,12 +995,12 @@ const Order = () => {
             <tbody>
               {selectedOrder.items.map((item, index) => (
                 <tr key={`${selectedOrder._id}-${index}`}>
-                  <th>{selectedOrder._id}</th>
-                  <th>{item.productId?.name || "Unknown Product"}</th>
-                  <th>{item.productType}</th>
-                  <th>₹{item.price || "N/A"}</th>
-                  <th>{item.quantity}</th>
-                  <th>₹{item.quantity * item.price}</th>
+                  <td>{selectedOrder._id}</td>
+                  <td>{item.productId?.name || "Unknown Product"}</td>
+                  <td>{item.productType}</td>
+                  <td>₹{item.price || "N/A"}</td>
+                  <td>{item.quantity}</td>
+                  <td>₹{item.quantity * item.price}</td>
                 </tr>
               ))}
             </tbody>
