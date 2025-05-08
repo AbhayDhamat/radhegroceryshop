@@ -1,6 +1,3 @@
-
-
-
 // import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import jsPDF from "jspdf";
@@ -235,7 +232,7 @@
 
 //         <div className="bill-footer">
 //           <h3>Total Amount: ₹{totalAmount}</h3>
-         
+
 //         </div>
 
 //         <button onClick={handleDownloadBill} className="download-btn">
@@ -267,8 +264,8 @@
 //           </div>
 //         </div>
 //       )}
-//   </div>    
-    
+//   </div>
+
 // );
 //   }
 
@@ -298,9 +295,6 @@
 
 // export default Order;
 
-
-
-
 // import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import jsPDF from "jspdf";
@@ -323,7 +317,6 @@
 //   const handleCashOnDelivery = () => {
 //     setShowModal(true); // Show the confirmation modal
 //   };
-  
 
 //   // Function to close the modal
 //   const closeModal = () => {
@@ -582,9 +575,6 @@
 
 // export default Order;
 
-
-
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
@@ -625,9 +615,12 @@ const Order = () => {
 
   const fetchUserProfile = async (token) => {
     try {
-      const response = await fetch("https://radhegroceryshop.onrender.com/user/profile", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        "https://radhegroceryshop.onrender.com/user/profile",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       const data = await response.json();
       if (!response.ok)
@@ -642,9 +635,12 @@ const Order = () => {
 
   const fetchOrders = async (token) => {
     try {
-      const response = await fetch("https://radhegroceryshop.onrender.com/orders", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        "https://radhegroceryshop.onrender.com/orders",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       const data = await response.json();
 
@@ -671,13 +667,16 @@ const Order = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`https://radhegroceryshop.onrender.com/orders/${orderId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://radhegroceryshop.onrender.com/orders/${orderId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       const data = await response.json();
       if (!response.ok) {
@@ -711,9 +710,7 @@ const Order = () => {
     doc.setFontSize(12);
     doc.setTextColor(70);
     doc.text(
-      `Bill Date: ${new Date(
-        selectedOrder.createdAt
-      ).toLocaleDateString()}`,
+      `Bill Date: ${new Date(selectedOrder.createdAt).toLocaleDateString()}`,
       14,
       40
     );
@@ -757,8 +754,16 @@ const Order = () => {
 
     doc.setTextColor(0);
     doc.setFontSize(14);
-    doc.text(`Total Amount: ₹${totalAmount}`, 14, doc.lastAutoTable.finalY + 10);
-    doc.text(`Payment Method: Cash on Delivery`, 14, doc.lastAutoTable.finalY + 20);
+    doc.text(
+      `Total Amount: ₹${totalAmount}`,
+      14,
+      doc.lastAutoTable.finalY + 10
+    );
+    doc.text(
+      `Payment Method: Cash on Delivery`,
+      14,
+      doc.lastAutoTable.finalY + 20
+    );
 
     doc.save("Order_Bill.pdf");
   };
@@ -823,8 +828,6 @@ const Order = () => {
   //           ))}
   //         </tbody>
   //       </table>
-        
-
 
   //       <div className="bill-footer">
   //         <h3>Total Amount: ₹{totalAmount}</h3>
@@ -865,7 +868,7 @@ const Order = () => {
 
   if (showBill && selectedOrder) {
     const totalAmount = selectedOrder.totalAmount;
-  
+
     return (
       <div className="bill-page">
         <style>{`
@@ -968,18 +971,28 @@ const Order = () => {
 }
 
         `}</style>
-  
+
         <h1>Radhe Grocery Shop Order Bill</h1>
         <div className="bill-header">
-          <p><strong>Bill Date:</strong> {new Date(selectedOrder.createdAt).toLocaleDateString()}</p>
+          <p>
+            <strong>Bill Date:</strong>{" "}
+            {new Date(selectedOrder.createdAt).toLocaleDateString()}
+          </p>
         </div>
         <div className="bill-user-info">
-          <p><strong>Name:</strong> {userInfo.name || "Unknown"}</p>
-          <p><strong>Email:</strong> {userInfo.email || "Unknown"}</p>
-          <p><strong>Address:</strong> {address?.street}, {address?.city}, {address?.state}, {address?.zip}, {address?.country}</p>
+          <p>
+            <strong>Name:</strong> {userInfo.name || "Unknown"}
+          </p>
+          <p>
+            <strong>Email:</strong> {userInfo.email || "Unknown"}
+          </p>
+          <p>
+            <strong>Address:</strong> {address?.street}, {address?.city},{" "}
+            {address?.state}, {address?.zip}, {address?.country}
+          </p>
         </div>
         <br />
-  
+
         <div className="bill-container-wrapper">
           <table className="bill-container">
             <thead>
@@ -1006,11 +1019,11 @@ const Order = () => {
             </tbody>
           </table>
         </div>
-  
+
         <div className="bill-footer">
           <h3>Total Amount: ₹{totalAmount}</h3>
         </div>
-  
+
         <button onClick={handleDownloadBill} className="download-btn">
           Download Bill
         </button>
@@ -1023,20 +1036,24 @@ const Order = () => {
         <button onClick={handleCashOnDelivery} className="download-btn">
           Cash On Delivery
         </button>
-  
+
         {showModal && (
           <div className="modal">
             <div className="modal-content">
               <p>Order Confirmed Successfully!</p>
-              <p>Your order will be delivered shortly. Thank you for shopping with us!</p>
-              <button onClick={closeModal} className="download-btn">Close</button>
+              <p>
+                Your order will be delivered shortly. Thank you for shopping
+                with us!
+              </p>
+              <button onClick={closeModal} className="download-btn">
+                Close
+              </button>
             </div>
           </div>
         )}
       </div>
     );
   }
-  
 
   if (orders.length === 0) return <p>No orders found.</p>;
 
@@ -1051,7 +1068,9 @@ const Order = () => {
         <div key={date} className="order-card1">
           <h3>Orders on: {date}</h3>
           {orders
-            .filter((order) => new Date(order.createdAt).toDateString() === date)
+            .filter(
+              (order) => new Date(order.createdAt).toDateString() === date
+            )
             .map((order) => (
               <div key={order._id}>
                 <button
@@ -1063,7 +1082,7 @@ const Order = () => {
                 {/* Add Cancel Button */}
                 <button
                   onClick={() => handleCancelOrder(order._id)}
-                  className="download-btn"//cancel-btn
+                  className="download-btn" //cancel-btn
                 >
                   Cancel Order
                 </button>
@@ -1076,4 +1095,3 @@ const Order = () => {
 };
 
 export default Order;
-
