@@ -899,7 +899,7 @@ const Order = () => {
 .bill-container th,
 .bill-container td {
   padding: 12px 16px;
-  border: 1px solid #444;
+  border: 1px solid #ddd;
   text-align: center;
   color:black;
 }
