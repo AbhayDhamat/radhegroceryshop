@@ -896,12 +896,12 @@ const Order = () => {
 }
 
 
-.bill-container th,
-.bill-container td {
-  padding: 12px 16px;
-  border: 1px solid #ddd;
-  text-align: center;
-  color:black;
+.bill-container th, .bill-container td {
+    border: 1px solid #4CAF50;
+    padding: 14px;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
 }
 
 .bill-container th {
