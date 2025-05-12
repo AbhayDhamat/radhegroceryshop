@@ -94,5 +94,5 @@ const VerifyOtpPage = () => {
     </div>
   );
 };
-
+ 
 export default VerifyOtpPage;
